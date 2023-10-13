@@ -336,7 +336,7 @@ print(even)
 
 
 # Example
-sammy = {'username':'sammy-shark', 'Online':True, 'followers':987}
+sammy = {'username':'sammy-shark', 'online':True, 'followers':987}
 
 print(sammy)
 
@@ -347,3 +347,154 @@ print(sammy)
 
 
 # accessing elements within a dictionary.
+
+
+print(sammy['followers'])
+#OUT = 987
+
+#accessing elements of dictionaries with functions
+
+print(sammy.keys()) # ALLOWS FOR THE ISOLATION OF THE DICTIONARY KEYS
+#OUT =dict_keys(['username', 'Online', 'followers'])
+print(sammy.values()) # ALLOWS FOR THE ISOLATION OF DICTIONARY VALUES
+#OUT =dict_values(['sammy-shark', True, 987])
+print(sammy.items()) # ALLOWS FOR THE DISPLAY OF DICTIOANRY TUPLES I.E. VALUE KEY PAIRS.
+#OUT =dict_items([('username', 'sammy-shark'), ('Online', True), ('followers', 987)])
+
+# this provides an iterable view across dictionaries, see below.
+
+#new dictionary = Jesse
+
+jesse = {'username':'Jesseeeee', 'online':False, 'followers':101}
+
+print(jesse.keys())
+
+#OUT = dict_keys(['username', 'online', 'followers'])
+
+
+for common_key in sammy.keys() & jesse.keys():
+    print(sammy[common_key],jesse[common_key])
+
+
+#OUT =
+
+''' 987 101 -  #followers
+True False     # online 
+sammy-shark Jesseeeee''' # username
+
+
+
+for common_key in sammy.keys() & jesse.keys():
+    print('These are sammy\'s keys:', sammy[common_key],'These are jesse\'s keys:',jesse[common_key])
+
+
+#OUT:
+'''These are sammy's keys: 987 These are jesse's keys: 101
+These are sammy's keys: True These are jesse's keys: False
+These are sammy's keys: sammy-shark These are jesse's keys: Jesseeee'''
+
+
+# would be good to see how on each iteration you can prefix with specific wording for a given iteration .
+for key, value in sammy.items():
+    print(key, ' is the key value ', value)
+
+#OUT:
+''' username  is the key value  sammy-shark
+online  is the key value  True
+followers  is the key value  987'''
+
+
+
+for key, value in jesse.items():
+    print(key, ' is the key value ', value)
+'''username  is the key value  Jesseeeee
+online  is the key value  False
+followers  is the key value  101'''
+
+# adding to dictionaries
+usernames = {'sammy':'sammy-shark', 'dave': 'delicate_dave', 'Jesse':'Jesseeeee'}
+
+usernames['jhon'] = 'Jhinny'
+
+print(usernames)
+
+# OUT = {'sammy': 'sammy-shark', 'dave': 'delicate_dave', 'Jesse': 'Jesseeeee', 'jhon': 'Jhinny'}
+
+jesse = {'username':'Jesseeeee', 'online':False, 'followers':101}
+
+jesse['followers']=255
+
+print(jesse)
+
+# OUT {'username': 'Jesseeeee', 'online': False, 'followers': 255} --> the 101 followers has sucessfully been updated to 255
+
+
+
+###################################################################
+###################################################################
+###################################################################
+
+
+
+
+
+# programme for username input.
+
+
+
+#step 1 define the original dictionary
+usernames = {'sammy':'sammy-shark', 'dave': 'delicate_dave', 'Jesse':'Jesseeeee'}
+
+
+#STEP 2 : SET A WHILE LOOP
+while True:
+    print('enter name') # STEP 3 request user to enter name
+    name=input() # STEP 4 make the variable 'name' = 'users input'
+    if name in usernames:
+        print(usernames[name]+ + 'is the username of:', name) # STEP 5 check if the username exists within the dictionary and return the username and the name of the individual.
+        #break
+    else:
+        print('i don\'t have'+ name + '\'s usernames, what is it?')
+
+        username = input() # STEP 6 take the user input for the new username
+
+        usernames[name] = username # STEP 7 assign username value to name key within the dictionary
+
+        print('Data Updated') # STEP 8 print to user that the data was updated.
+
+# DOES NOT SAVE UPDATED VALUES
+###################################################################
+###################################################################
+###################################################################
+
+
+#VERSION 2 - THIS SAVES INTO THE DICTIONARY THE UPDATED VALUE
+
+#step 1 define the original dictionary
+usernames = {'sammy':'sammy-shark', 'dave': 'delicate_dave', 'Jesse':'Jesseeeee'}
+
+
+#STEP 2 : SET A WHILE LOOP
+while True:
+    print('enter name') # STEP 3 request user to enter name
+    name=input() # STEP 4 make the variable 'name' = 'users input'
+    if name in usernames:
+        print(usernames[name]+ + 'is the username of:', name) # STEP 5 check if the username exists within the dictionary and return the username and the name of the individual.
+        #break
+    else:
+        print('i don\'t have'+ name + '\'s usernames, what is it?')
+
+        username = input() # STEP 6 take the user input for the new username
+
+        usernames[name] = username # STEP 7 assign username value to name key within the dictionary
+
+        print('Data Updated') # STEP 8 print to user that the data was updated.
+
+
+#STEP 9 ENSURE TO SELECT CTRL + C IN CONSOLE WINDOW
+
+#STEP 10 PRINT THE DICTIONARY ONCE PROGAMME HAS BEEN EXITED - VALIDATE UPDATED VALUE(S) ARE STORED IN YOUR DICTIONARY
+
+#IN THIS CASE OUTPUT = print(usernames) = {'sammy': 'sammy-shark', 'dave': 'delicate_dave', 'Jesse': 'Jesseeeee', 'liam': 'FIREFLY'}
+
+# i.e. the new user input = NAME = 'liam' USERNAME =  'FIREFLY'
