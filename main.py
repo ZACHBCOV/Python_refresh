@@ -40,17 +40,6 @@ for drink in list_of_beverages:
 
 # mooms show
 
-1+1
-12*3
-
-print("Hello moons")
-
-x = "hello moons"
-
-print(x)
-
-del x
-
 numbers = [1, 2, 3,4,5,6,7,8,9,10]
 for number in numbers:
     print(number)
@@ -159,15 +148,12 @@ import turtle
 for _ in range(4):
     turtle.forward(100)
     turtle.left(90)
+    for i in range(4):
+        turtle.forward(50)
+        turtle.left(45)
         for i in range(4):
-            turtle.forward(50)
-            turtle.left(45)
-                for i in range(4):
-                    turtle.forward(100)
-                    turtle.left(90)
-                        for i in range(4):
-                            turtle.forward(200)
-                            turtle.left(180)
+            turtle.forward(200)
+            turtle.left(180)
 
 
 #strings
@@ -185,4 +171,179 @@ print(str[-2]) # returns second from last character
 print(str[0:2]) # slicing returns a range within the string. 0 being the firt character. up-to but not
 #...including position 2 i.e. he .. if position 2 was inclusive it would return hey.
 
+#string operators:
 
+#concatenation
+print('hello''world')
+
+S='hello'
+r='world'
+print(S+r)
+
+
+# count letters == 'i'
+
+count = 0
+
+for letter in 'thisword':
+    if(letter=='i'):
+        count=count+1
+        #count=count+1 ... can also be written count+=1
+print(count, 'letters  i found in the word thisword')
+
+
+# count letters that are not 'i'
+
+count = 0
+
+for letter in 'thisword':
+    if(letter != 'i'):
+        count=count+1
+        #count=count+1 ... can also be written count+=1
+print(count, 'letters which are not i found in the word thisword')
+
+
+#substring membership test
+
+'a' in 'apple' # >>> True
+'a' in 'bluebell' #>>> False
+
+
+p# Built in fuctions: LEN & Enumerate
+
+list = [ 'one',  'day', 'i' ,'will' 'be', 50 ,'years','old', 'assuming', 'i', 'do', 'not', 'die']
+
+P = 'forget'
+
+#ENUMERATE EXAMPLE
+del list
+STRING = 'HELPMEFORTHELOVEOFGOD'
+
+list_enumerate = list(enumerate(STRING))
+print('LIST_ENUMERATE(STRING)=',list_enumerate)
+#OUTPUT = LIST_ENUMERATE(STRING)= [(0, 'H'), (1, 'E'), (2, 'L'), (3, 'P'), (4, 'M'), (5, 'E'), (6, 'F'), (7, 'O'), (8, 'R'), (9, 'T'), (10, 'H'), (11, 'E'), (12, 'L'), (13, 'O'), (14, 'V'), (15, 'E'), (16, 'O'), (17, 'F'), (18, 'G'), (19, 'O'), (20, 'D')]
+
+#THIS ASSIGNS A TUPLE - showing the list position and the letter within this position
+
+print(len(STRING))
+#OUTPUT 21
+
+###########Continue 6.10.23 page 47 ... "Python string formatting" ###################################
+
+
+# 06.10.23
+# this displays one type of input as another. This uses a plceholder {} to replace key values
+# format methods -
+
+#formatting integers:
+
+print('binary represemtation of {0} is {0:b}'.format(12))
+
+'binary represemtation of {0} is {0:b}'.format(12)
+# output = 'binary represemtation of 12 is 1100'
+
+
+# Formatting floats
+
+'exponent representation: {0:e}'.format(123.234)
+
+#output = 'exponent representation: 1.232340e+02'
+
+
+#escape sequences in strings:
+
+#1 new line:
+
+print('this is printed in\n two lines')
+#Out
+# this is printed in
+ #two lines
+
+print("i said \"whats theres?!\"") # to use quotes in the output
+
+ # to use back slashes
+
+print("C:\\python32lib\\") # OUT = C:\python32lib\
+
+
+print("You have {} apple{}.".format(5, 's'))
+
+# this will print:
+# You have 5 apples.
+
+
+
+#round off
+'one third is:{0:.3f}'.format(1/3)
+# OUT = 'one third is:0.333'
+
+'{:.5}'.format('xylophone')
+# out = 'xylop'
+LIST_a = [1,2,3,4,5]
+print(LIST_a.pop(1))
+
+
+# LIST COMPREHENSION = creating new lists uing a for statement.
+
+pow2 = [2** x for x in range (10)]
+print (pow2)
+
+# output for pow 2 = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
+
+# THE ABOVE CODE IS EQUIVALENT TO:
+pow2_0=[] # Empty list
+for x in range(10):
+    pow2_0.append(2 ** x)
+
+print(pow2_0)
+
+# if statments - conditions introduce into results
+
+
+pow3 = [3** x for x in range (10)]
+print(pow3)
+#out = [1, 3, 9, 27, 81, 243, 729, 2187, 6561, 19683]
+
+# for value in position x to the power of 3 i.e. x= 1*3 = 3, x.2 = 3*3 = 9, x.3 = 9*3 = 27  , x.4 = 27*3 etc
+# Condition on 7 being greater than 7 as it iterates through the 10 values 0 - 9 for (10)
+pow3_0 = [3 ** x for x in range (10) if x > 7]
+print (pow3_0)
+#out = [6561, 19683]
+
+
+#odd
+
+odd = [x for x in range(20) if x % 2 == 1]
+
+print(odd)
+
+# OUT  = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+
+
+# Even
+even = [x for x in range(20) if x % 2 == 0]
+print(even)
+
+#OUT == [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+
+
+# DICITONARIES
+
+# = unordered collection of items, dictionaries map keys to values - i.e. value key pairs (KEY: VALUE)
+#other compund types of data only contain a single value as an element.
+# dicitonaries are optimised to return a value when we know the key.
+# dictionaries store realted data and are constucted using curly brackets '{}'
+
+
+# Example
+sammy = {'username':'sammy-shark', 'Online':True, 'followers':987}
+
+print(sammy)
+
+#OUT = {'username': 'sammy-shark', 'Online': True, 'followers': 987}#
+# key value pairs key on the left and value on the right seperated by a colon. When output the order of the dictionary value key pairs may change and this relates to the unordered nature of dictionaries.
+# As dictionaries do not maintain order they lack the ability to be indexed. i.e. how you can in tuples or list data types.
+#although the dictionaries cannot be indexed, the value key pairs remain intact allowiing the data to be accessed in regard to its relational meaning.
+
+
+# accessing elements within a dictionary.
