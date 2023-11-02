@@ -554,18 +554,16 @@ else:
     print('your balance is:', balance, 'you can withdraw:£', balance*0.5, 'today')
 
 
-
-
-
-
 import pandas as pd
 import numpy as np
 
-#Create a DataFrame
+#Create a DataFrame - using pandas - numpy.
+
+# each np.where ((df.score < x), X GRADE, --> cqaptures the values required (parameters for each respective grade.
 
 d = {                                                # Creating a dict for dataframe
-    'StudentName':['Harrison','Jake','Jake','Hayley'],
-    'Score':[64,68,61,86]}
+    'StudentName':['Harrison','Jake','Jake','Hayley','John', 'belle'],
+    'Score':[64,68,61,86,99,12]}
 
 df = pd.DataFrame(d)   # converting dict to dataframe
                        # Keys get converted to column names and values to column values
@@ -580,4 +578,34 @@ df['Grade'] = np.where((df.Score < 60 ),
                   'B', np.where((df.Score >= 90) & (df.Score <= 100),
                   'A', 'No Marks')))))
 print(df)
+
+'''
+OUTPUT: 
+ StudentName  Score Grade
+0    Harrison     64     D
+1        Jake     68     D
+2        Jake     61     D
+3      Hayley     86     B
+4        John     99     A
+5       belle     12     F
+'''
+
+#name = str(input('Enter your name'))
+marks = int(input('enter your marks'))
+while True:             # Loop continuously
+    marks = int(input())   # Get the input
+    if marks > 90:
+        print ('pass grade: A. mark achived over grade threshold:',marks - 90)
+    elif marks > 80:
+        print ('pass grade: B. mark achived over grade threshold:', marks - 80)
+    elif marks > 70:
+        print ('pass grade: C. mark achived over grade threshold:', marks - 70)
+    elif marks > 60:
+        print ('pass grade: D. mark achived over grade threshold:', marks - 60)
+    elif marks > 50:
+        print ('pass grade: E. mark achived over grade threshold:', marks - 50)
+    else:
+        print ('Fail grade: F. mark achived under pass grade threshold:', 50 - marks)
+    if marks == "":       # If it is a blank line...
+            break           # ...break the loop
 
