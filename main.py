@@ -498,3 +498,86 @@ while True:
 #IN THIS CASE OUTPUT = print(usernames) = {'sammy': 'sammy-shark', 'dave': 'delicate_dave', 'Jesse': 'Jesseeeee', 'liam': 'FIREFLY'}
 
 # i.e. the new user input = NAME = 'liam' USERNAME =  'FIREFLY'
+
+
+# to delete
+
+del usernames["liam"]
+
+print(usernames)
+
+#OUT = {'sammy': 'sammy-shark', 'dave': 'delicate_dave', 'Jesse': 'Jesseeeee'}
+
+# Liam has been deleted...
+
+#02.11.23:
+
+#chapter 10 boolean logic
+
+# = sets a variable to equal an assigned value ... whereas == evaluates whether a variable is equal to another value or variable
+# i.e. = is an assignment operator and == is a comparison operator
+
+# logical operators:
+        # and: true if both are true
+        # or: true if at least one is true
+        # not: true only if false
+
+
+not((0.2>1.4)and((0.8<3.1)or(0.1==0.1))) -- #compound expression for booloean
+
+#Flow control
+grade = 70
+if grade >= 70:
+    print('pass')
+else:
+    print ('fail')
+
+
+#exampele 2
+balance = -54
+if balance < 0:
+    print('your account balance is:£', balance, 'you must deposit adequate funds to correct this or be subject to interest and charges')
+else:
+    print('your balance is:', balance, 'you can withdraw:£', balance*0.5, 'today')
+
+
+#ELSE IF STATEMENT --> 'elif'
+
+#exampele 3
+balance = 0
+if balance < 0:
+    print('your account balance is:£', balance, 'you must deposit adequate funds to correct this or be subject to interest and charges')
+
+elif balance == 0:
+    print ('your account balance is:£', balance, 'consider depositing funds soon to avoid assuming a negative balance')
+else:
+    print('your balance is:', balance, 'you can withdraw:£', balance*0.5, 'today')
+
+
+
+
+
+
+import pandas as pd
+import numpy as np
+
+#Create a DataFrame
+
+d = {                                                # Creating a dict for dataframe
+    'StudentName':['Harrison','Jake','Jake','Hayley'],
+    'Score':[64,68,61,86]}
+
+df = pd.DataFrame(d)   # converting dict to dataframe
+                       # Keys get converted to column names and values to column values
+
+#get grade by adding a column to the dataframe and apply np.where(), similar to a nested if
+
+
+df['Grade'] = np.where((df.Score < 60 ),
+                  'F', np.where((df.Score >= 60) & (df.Score <= 69),
+                  'D', np.where((df.Score >= 70) & (df.Score <= 79),
+                  'C', np.where((df.Score >= 80) & (df.Score <= 89),
+                  'B', np.where((df.Score >= 90) & (df.Score <= 100),
+                  'A', 'No Marks')))))
+print(df)
+
