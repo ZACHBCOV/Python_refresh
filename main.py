@@ -901,3 +901,6 @@ d= Dog('jill', 25)
 d.show()
 d.speak()
 c.speak()
+
+# CLASS ATTRIBUTES
+
