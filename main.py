@@ -608,4 +608,296 @@ while True:             # Loop continuously
         print ('Fail grade: F. mark achived under pass grade threshold:', 50 - marks)
     if marks == "":       # If it is a blank line...
             break           # ...break the loop
+pip3 install lxml
+import pandas as pd
+all_tables = pd.read_html('https://en.wikipedia.org/wiki/2022_FIFA_World_Cup')
+import pandas
+import bs4
+import flask
+import requests
+html_requests = requests.get(‘https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=iphone&_sacat=0&LH_TitleDesc=0&_odkw=ipho&_osacat=0',
+params={‘_from’:’R40', ’_trksid’:’m570.l1313', ’_nkw’:’iphone’, ’_sacat’:’0'})
+print(html_requests.text)
 
+
+html_requests = requests.get(‘https://www.ebay.com/sch/i.html',
+params={‘_from’:’R40', ’_trksid’:’m570.l1313', ’_nkw’:’iphone’, ’_sacat’:’0'})
+print(html_requests.text)
+
+####################################################################################
+
+import pandas as pd
+name_grades = {"name":, "grade":}
+
+while True:
+    name = input("Please give me the name of the student [q to quit]:")
+    if name == 'q':
+        break
+    else:
+        grade = input("Give me their grade: ")
+        name_grades[name]=grade
+print(name_grades)
+#Dataframe
+
+data = pd.DataFrame(name_grades)
+print(name_grades)
+
+##CLASS ---> DICTIONARY --> PANDAS : CLASS DEFINES THE OBJECTS VARIABLES
+# AND SHOULD ALLOW THE PD FUNCTION TO IDENTIFY AND STORE USER INPUT INTO THESE
+score= {"name":, "grade":}
+
+while True:
+    name = input("Please give me the name of the student [q to quit]:")
+    if name == 'q':
+        break
+    else:
+        score = input("Give me their grade: ")
+        score[name]=score
+print(name_grades)
+class team:
+  def __init__(self, name, score):
+    self.name = name
+    self.score = score
+
+  def myfunc(self):
+    print(self.name, 'total score =',score)
+
+p1 = Person("liverpool', 0)
+p1.myfunc()
+
+class team:
+    instances = dict()
+
+
+    def __init__(self, team, score)  :
+        self.instances[self.team] = team
+        self.instances[self.score] = score
+
+    def scores(self):
+        self.score = int( self.score)
+
+
+
+team = score.8
+def __init__(self, name, score)  :
+    self.location = location
+    self.fee  = fee
+    self.instances[self.location] = location
+    self.instances[self.fee] = fee
+
+# Object orientated programming and classes:
+
+class Parrot:
+
+    # class attribute
+    name = ""
+    age = 0
+
+# create parrot1 object
+parrot1 = Parrot()
+parrot1.name = "Blu"
+parrot1.age = 10
+
+# create another object parrot2
+parrot2 = Parrot()
+parrot2.name = "Woo"
+parrot2.age = 15
+
+# access attributes
+print(f"{parrot1.name} is {parrot1.age} years old")
+#print(f"{parrot2.name} is {parrot2.age} years old")
+print(parrot1.name, 'is', parrot1.age, 'years old ')
+
+# inheritance
+
+# base class
+class Animal:
+
+    def eat(self):
+        print( "I can eat!")
+
+    def sleep(self):
+        print("I can sleep!")
+
+# derived class
+class Dog(Animal):
+
+    def bark(self):
+        print("I can bark! Woof woof!!")
+
+# Create object of the Dog class
+dog1 = Dog()
+
+# Calling members of the base class
+dog1.eat()
+dog1.sleep()
+
+# Calling member of the derived class
+dog1.bark();
+
+# Encapsulation within classes
+class Computer:
+
+    def __init__(self):
+        self.__maxprice = 900
+
+    def sell(self):
+        print("Selling Price: {}".format(self.__maxprice))
+
+    def setMaxPrice(self, price):
+        self.__maxprice = price
+
+c = Computer()
+c.sell()
+
+# change the price
+c.__maxprice = 1000
+c.sell()
+
+# using setter function
+c.setMaxPrice(1000)
+c.sell()
+
+class team:
+    def __init__(self):
+        self.score +=
+
+
+import random
+    c=team()
+    c.score = random.randint(1,10)
+    print('current goals =', c.score)
+
+
+# using random number method across x games to generate a
+#random number of goals per game and an aggregate score.
+game_score = 0
+import random
+def games_and_goals_AS_score():
+    score = 0
+    for games in range(6):
+       goals = random.randint(1, 6)
+       print(goals, end=" ")
+       score += goals
+
+    print("\n"+str(score))
+games_and_goals_AS_score()
+
+#youtube walk through
+class Team:
+    def __init__(self, name, position):
+        self.name = name
+        self.position = position
+    def get_name(self):
+        return self.name
+    def get_league_position(self):
+        return self.position
+# modifiers
+    def set_position (self, position):
+        self.position = position
+
+x= Team('scotland', 33)
+x1=Team('england',11)
+
+# name
+print(x.name)
+print(x1.name)
+#get name
+print(x.get_name())
+print(x1.get_name())
+#league position
+print(x.get_league_position())
+print(x1.get_league_position())
+
+
+#Example 2:
+
+class Student:
+    def __init__(self, name, age, grade):
+        self.name = name
+        self.age = age
+        self.grade = grade #0-100
+    def get_grade(self):
+        return self.grade
+class Course:
+    def __init__(self, name, max_students):
+        self.name = name
+        self.max_students = max_students
+        self.students=[]
+    def add_student(self, student):
+        if len(self.students) < self.max_students:
+            self.students.append(student)
+            return True
+        return False
+    def get_average_grade(self):
+        value=0
+        for student in self.students:
+            value += student.get_grade() # grade could
+            # be used but get grade accounts for any changes
+            # in the function and prevents a code breakage.
+            return value/len(self.students)
+
+s1 = Student('Tim', 19, 95)
+s2= Student('dom', 19, 75)
+#s3 = Student('Lisa', 19, 66)
+
+course = Course('science', 2)
+course.add_student(s1)
+course.add_student(s2)
+#print(course.students[0])#get the name of student added to list of students
+#print(course.students[0].name)
+print(course.add_student(s3))
+print(course.get_average_grade())
+
+# inheritence etc..
+# two classes of similarity
+class Cat:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def speak(self):
+        print('meow')
+
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def speak(self):
+        print('Bark')
+
+        #^ two seperate classes - but combine to form 1 below
+
+
+class Pet:
+  def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def show(self):
+        print(f' i am {self.name} and i am {self.age} years old ')
+    def speak(self):
+        print('i dont know what i say')
+class Cat(Pet):
+    def __init__(self, name, age, color):
+        super().__init__(name, age) #] super references the superclass inherited from
+        # name and age are passed
+        self.color = color
+    def speak(self):
+        print('meow')
+    def show(self):
+        print(f'i am {self.name} and i am {self.age} years old and i am {self.color}')
+class Dog(Pet):
+    def speak(self):
+        print('Bark')
+
+# instance of pet class
+
+p = Pet('tim', 19)
+p.show()
+c= Cat('bill', 34, 'brown')
+c.show()
+d= Dog('jill', 25)
+d.show()
+d.speak()
+c.speak()
