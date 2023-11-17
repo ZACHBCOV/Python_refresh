@@ -950,3 +950,17 @@ print(Person.number_of_people_cls())
 # a constant variable wll be defined by a class variable.
 #They have transferability and dont need anyhthing outside of the class to work unless it uses other classes.
 
+#STATIC_METHODS:
+# want to be able to us ethese methods at any point
+#static i.e. staying the same. They do something but do not change anything.
+class Math:
+    @staticmethod
+    def add5(x): # nothing contained e.g. 'self', or 'cls' as it doesnt change anything.
+        return x + 5
+   @staticmethod
+    def add10(x): # nothing contained e.g. 'self', or 'cls' as it doesnt change anything.
+        return x + 10
+
+
+print(Math.add5(5))
+print(Math.add10(5))
