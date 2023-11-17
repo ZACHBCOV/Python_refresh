@@ -904,3 +904,49 @@ c.speak()
 
 # CLASS ATTRIBUTES
 
+class Person:
+    number_of_people = 0
+
+    def __init__(self, name):
+        self.name = name
+
+p1 = Person('tim')
+p2 = Person('john')
+print(Person.number_of_people)
+
+print(p2.number_of_people)
+Person.number_of_people = 8 # this will update the value contined within
+#the attribute value as it is non-specific
+#this is like a global variable - example could be number of players on a team
+
+#next - putting this into use
+
+class Person:
+    number_of_people = 0
+
+    def __init__(self, name):
+        self.name = name
+        Person.add_person()#using class method to add a person
+        #using class method to add to the clss person.
+
+    #Class Method
+    #This is not specific to an instance and is called on the class itself
+    #e.g. returning on the number of people associated with this class
+    #there is no object it is acting on the class hence not self instead 'cls'
+
+    @classmethod# this denotes this is a class method
+    def number_of_people_cls(cls):
+        return cls.number_of_people
+    @classmethod
+    def add_person(cls):
+        cls.number_of_people += 1
+
+p1 = Person('tim')
+p2 = Person('john')
+print (Person.number_of_people)
+
+print(Person.number_of_people_cls())
+
+# a constant variable wll be defined by a class variable.
+#They have transferability and dont need anyhthing outside of the class to work unless it uses other classes.
+
