@@ -1237,3 +1237,96 @@ for i, element in enumerate(x): # i variable denotes variable in the list, eleme
 7 0'''
 
 ###### WHILE LOOPS
+
+## WHILE CONDITION == TRUE: THEN DO SOMETHING (PSUEDO)
+
+x= [3,4,42,3,2,4]
+
+i = 0
+while i < 10:
+    print('run')
+    i=i+1 # or i+=1
+
+#out =  RUN 10 TIMES
+
+#ANOTHER WAY TO RIGHT THIS
+
+i = 0
+while True:
+    print('run')
+    i=i+1 # or i+=1
+    if i ==10:
+        break # breaks the loop when the i ==10 condition is met.
+#out =  RUN 10 TIMES
+
+
+#SLICE OPERATOR
+
+x=[0,1,2,3,4,5,6,7,8]
+
+#SLICE FUNCTION HAS A START, STOP, STEP - simialar to the range function.
+
+sliced = x[0:4:2]
+print(sliced) # OUT: [0, 2]
+#start at 0 go until the 4th index,non inc, and step in increments of 2.
+sliced = x[2:]
+print(sliced) # OUT: [2, 3, 4, 5, 6, 7, 8]
+# x[2:] means start at index to and go to the end as nothing on right side of colon
+sliced = x[::-1] # start at the beggining go to the end and start at -1
+print (sliced) # [8, 7, 6, 5, 4, 3, 2, 1, 0] # reverses the list
+
+# also works on a string and Tuples
+s = 'hello'
+sliced = s[::-1]
+print(sliced) # OUT: olleh
+
+
+#### SETS #####- unordered unique collection of elements. NOT FREQ OR ORDER
+# useful for if something is there or not there: useful and fast for lookups removals or additions
+x = set() # needed for empty sets
+
+# you can use curly brackets for a set so long as you are not leaving it blank
+#or else you create a dictionary
+s ={4,32,2,2}
+print(type(s)) # <class 'set'>
+#vs
+k ={}
+print(type(k))# <class 'dict'> i.e. NOT what we want if working with SETs
+
+print(s) # OUT:{32, 2, 4} # duplicate 2 removed and different order.
+
+s.add(5)
+
+print(s) # OUT:{32, 2, 4, 5}
+
+s.remove(32) # OUT {2, 4, 5}
+
+print(s)
+
+# check if something is in a set
+
+print(4 in s) # OUT True - i.e. 4 is in the set
+print (33 in s)# OUT False - i.e. 33 is NOT in the set
+#faster for looking up than large lists.
+
+# union of sets.
+
+s ={4,32,2,2}
+s2 = {1,3,25,62}
+print(s.union(s2)) # OUT: = UNION of the 2 sets: {32, 1, 2, 3, 4, 25, 62}
+
+#DIFFERENCE OF THE 2 SETS
+print(s.difference(s2)) # OUT {32, 2, 4}
+print(s2.difference(s)) #OUT {1, 3, 62, 25}
+
+# Intersectooion
+
+s ={4,32,2,2,18,19,20}
+s2 = {1,3,25,62,18,19,20}
+print(s.intersection(s2)) # OUT :{18, 19, 20} i.e.  value in both
+
+
+'''CONTINUE ON DICTIONARIES:
+VID TIME: 54:30 
+URL: https://www.youtube.com/watch?v=VchuKL44s6E
+'''
