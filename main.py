@@ -1180,3 +1180,60 @@ print(LIST)
 # NOW LIST = [4, True, 'hi', 'hello', 'A', 'b']
 print (LIST.pop(0)) # select an index position
 #OUT = 4 ... i.e. 'popped' the first indexed item in the list.
+
+#ACCESSING ELEMENTS OF A LIST
+print(LIST[1]) # SECOND ITEM AS LISTS INDEX START @ 0
+#OUT = hi
+
+#CAN CHANGE AN INDEX VALUE IN THE LIST AS LISTS ARE MUTABLE.
+#LISTS = MUTABLE. AS THE VARTIABLE LIST IS NOT A COPY OF THE LIST BUT A REFERENCE TO THE LIST I.E THEY ARE STORED SOMEWHERE ELSE.
+LIST[0]='NEW'
+print(LIST)
+#OUT = ['NEW', 'hi', 'hello', 'A', 'b']
+
+###TUPLES - SIMILAR TO A LIST BUT 'IMMUTABLE' - i.e. cannot be changed like a list once defined. To change you must recreate to change.
+
+x = (0,1,2,3)
+print(x[0])
+#OUT = 0
+
+
+########FOR LOOP - LOOPING A DEFINED NUMBER OF TIMES.
+
+for i in range(10):
+    print(i)
+
+#OUT 0 --> 9
+
+for i in range(10):
+    print(i)
+# i = iterator or counter variable = some variable
+# in always have
+#range is a function that takes an input variable:
+#       (number we start at - usually 0) START, (number we stop at), step (how you step through i.e. 2 = 2, 4, 6 ,8
+#       example for i in range (1,10,2) = start at 1, stop at 10 (non inc) and step is how we increment through the range.
+
+#loop through a list
+for i in [5,3,5,6,88,9,9,0]:
+    print(i) # this simply prints the collection within the list
+
+#If you want to track
+x = [5,3,5,6,88,9,9,0]
+for i in range (len(x)):
+    print(x[i]) # this simply prints the collection within the list
+
+# ENUMERATE: create indexes and values for all elements in our list
+
+for i, element in enumerate(x): # i variable denotes variable in the list, element variable denotes the index variable.
+    print(i, element)
+#OUT: INDEX LEFT AND VALUE RIGHT
+'''0 5
+1 3
+2 5
+3 6
+4 88
+5 9
+6 9
+7 0'''
+
+###### WHILE LOOPS
