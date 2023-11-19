@@ -964,3 +964,219 @@ class Math:
 
 print(Math.add5(5))
 print(Math.add10(5))
+
+
+
+# REVISITNG THE PYTHON FUNDAMENTALS - TECH WITH TIM YT VID
+
+#printing - carriage returns
+print(4.5, 'hello', end='\n') # carriage return - moves to a new line.
+
+#\n can be changed to |
+print(4.5, 'hello', end='|')
+print ('lemons')
+#4.5 hello|lemons - this introduces a pipe delimiter.
+
+# variables:
+hello = 'time is'
+world = 'relative'
+
+print(hello, world)
+
+#input
+
+input('Name: ')
+name = input('Name: ')
+age = input('age: ')
+print (f'Hello {name}, you are {age} years old!')
+
+#mathematical operators
+## + - * / ** // %  ##
+# BODMAS
+# BRACKETS ORDERS(POWERS) DIVISION MULTIPLICATION ADDITION SUBTRACTION
+x= 9
+y = 3.5
+
+result = x / y
+ print (result)
+ #OUT 2.5714285714285716 - FLOAT returned. Can convert to an int by int ()
+
+#exponent
+x= 9
+y = 3
+result = x ** y
+ print (result)
+#729
+
+#Floor divison - how many times y goes into x
+x = 10
+y = 3
+result = x // y
+ print (result)
+ #OUT 3
+
+#MODULUS % - i.e. the remainder after a division
+x = 10
+y = 3
+result = x % y
+ print (result)
+
+#OUT 1
+
+#BODMAS (EXAMPLE)
+
+x = 10
+y = 3
+result = (x % y) * 2
+ print (result)
+
+# OUT = 2
+
+#ARITMETIC INPUT
+
+num = input('Number')
+print (int(num) - 5)
+
+#Float can also be used in place of int
+# INPUT = 50... OUT = 45
+
+
+#Type of a variable
+hello = 'hello '
+
+print(type('hello'))
+
+# SHOWS INSTANCE OF A CLASS I.e <class 'str'>
+
+
+#USING METHODS ON STRINGS
+
+hello = 'hello'.upper()
+print(hello)
+
+#OR CAN DO print(hello.upper())
+hello = 'hello'
+print(hello.upper())
+print(hello.lower())
+# #OUT HELLO
+
+
+word = 'HeLlO'
+print(word.capitalize())
+#OUT = Hello
+
+print ( word.lower().count('ll')) # Convert mixed case to lower for count method.
+
+
+word = ('hello')
+print(word.count('ll'))
+
+#OUT 1
+
+#String mult/add
+
+x = 'hello'
+y = 8
+z = 'just_saying'
+
+print(x*y)
+#OUT hellohellohellohellohellohellohellohello
+print(x+z)
+#OUT: hellojust_saying
+
+
+#Conditional operators
+# == : equality i.e. is the left hand side equal to the right hand side
+# != : inequality left/right not equal
+#<=: less than or equal too
+#> : greater than or equal too
+#<: less than
+#> greater than
+
+x = ' hello '
+y = ' hello '
+
+print(x == y)
+#True
+print(x != y)
+#False
+print ('a' > 'Z') # assci code assigns values to characters in python, ordinal values assigned
+#TRUE: -->
+        #ordinal values >/< comparing the ordinal values of strings
+        print(ord('a')) #97 - assci value
+        print(ord('Z')) #90 - assci value
+
+
+##CHAINED CONDITIONALS
+
+x = 7
+y = 8
+z = 0
+
+result1 = x == y
+result2 = y > x
+result3 = z < x + 2
+
+#and
+#or
+#not
+
+result4 = result1 or result2
+print(result4)
+#True
+
+result4 = result1 or result2 or result3
+print(result4)
+#True
+
+result4 = result1 or not result2 or result3
+print(result4)
+#True
+
+result4 = result1 and result2
+print(result4)
+#False
+
+#order of operation e.g. >>>>>or not>>>or: Evaluates either: True or False
+
+
+#IF/ELSE/ELIF
+
+x = input('name:')
+
+if x =='Tim': # conditon
+    print('you are great!') # if true do this... #ELIF as many as you want and before the else statement
+elif x == 'Zach':
+        print('ok')
+elif x == 'Sarah':
+    print('great')
+else:                   # if not true else retuned
+    print('no')
+print('always do this')
+
+
+# Collections: LISTS AND TUPLES
+
+LIST = [4, True, 'hi']# list is an ordered collection (order maintained), mixed data types can be contined.
+print(len(LIST)) # OUT = 3
+
+#append
+LIST.append('hello')
+print(LIST)
+#OUT [4, True, 'hi', 'hello']
+
+#ADD A LIST TO A LIST
+LIST2 = ['A','b','c']
+
+LIST.extend(LIST2)
+print(LIST)
+# or input direct i.e. LIST.extend(['A','b','c'])
+#OUT [4, True, 'hi', 'hello', 'A', 'b', 'c']
+
+# 'POP' function for lists
+print (LIST.pop())
+#OUT = c  i.e. this has 'popped' the last element of the list
+print(LIST)
+# NOW LIST = [4, True, 'hi', 'hello', 'A', 'b']
+print (LIST.pop(0)) # select an index position
+#OUT = 4 ... i.e. 'popped' the first indexed item in the list.
